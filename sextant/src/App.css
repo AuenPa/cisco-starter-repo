@@ -1,38 +1,100 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.box{
+    border: 2px solid grey;
+    width : 600px;
+    margin:auto;
+    margin-top: 50px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tabs{
+    display: flex;
+    justify-content: space-between;
+}
+
+.tab{
+    background : #ccc;
+    flex:1;
+    padding:10px;
+    text-align:center;
+    border:1px solid grey;
+    border-top:none;
+    cursor:pointer;
+    position:relative;
+}
+
+.active-tab{
+    border:none;
+    background:#fff;
+}
+
+.active-tab::after{
+    border-top:2px solid blue;
+    content:'';
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    width:100%;
+    background:initial;
+    animation:new 0.5s;
+}
+
+@keyframes new{
+    from{
+        top:50px;
+        left:0;
+        right:0;
+        background:gray;
+    }
+    to {
+        top: 00px;
+        left: 0;
+        right: 0;
+        border-top:2px solid grey;
+    }
+}
+
+.contents{
+    position: relative;
+
+}
+
+.content{
+    display:none;
+    position:relative;
+}
+
+.active-content{
+    display:block;
+    margin-left:10px;
+    margin-right:10px;
+    transition:all 1s ease-in-out;
+    animation:example 0.3s;
+}
+
+@keyframes example {
+    from {
+
+        margin:0;
+    }
+
+    to {
+        margin-left:10px
+    }
 }
